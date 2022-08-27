@@ -3,6 +3,7 @@ public class Sucesion
 {
     public void Calculator(int valor)
     {
+        int TerminosAmount=0;
         int LongestCadena=0;
         foreach (var value in Enumerable.Range(1, valor).Reverse())
         {
@@ -26,13 +27,14 @@ public class Sucesion
                 }
 
             }
-            if(Pasos>LongestCadena)
+            if(Pasos>TerminosAmount)
             {
                 LongestCadena=value;
-                Pasos=0;
+                TerminosAmount=Pasos;
             }
+            Pasos=0;
             Console.WriteLine("----------------");
         }
-        Console.WriteLine($"La cadena más larga la produce el número {LongestCadena}");    
+        Console.WriteLine($"La cadena más larga la produce el número {LongestCadena} con {TerminosAmount} terminos");    
     }
 }
